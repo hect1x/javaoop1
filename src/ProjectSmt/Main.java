@@ -60,7 +60,7 @@ public class Main {
                 }
 			}
 			if(x!=4) {
-				System.out.println("Continue press anyt..");
+				System.out.println("Press any key to continue..");
 				cin.nextLine();
 				cls();
 			}
@@ -72,20 +72,23 @@ public class Main {
 	
 	public static boolean show(ArrayList<Info> infos) {
         if (infos.isEmpty()) {
-            System.out.println("No data available.");
+        	System.out.println("----------------------------------------------------------------");
+        	System.out.printf("|%-4s| %-30s| %-10s| %-12s|\n", "No", "Name", "Pass", "Phone");
+            System.out.println("----------------------------------------------------------------");
+        	System.out.println("                         |No data exist|");
             return false;
         } else {
-            System.out.printf("%-4s %-10s %-10s %-12s\n", "No", "Name", "Pass", "Phone");
-            System.out.println("----------------------------------------");
+        	System.out.println("----------------------------------------------------------------");
+        	System.out.printf("|%-4s| %-30s| %-10s| %-12s|\n", "No", "Name", "Pass", "Phone");
+            System.out.println("|--------------------------------------------------------------|");
             for (int i = 0; i < infos.size(); i++) {
                 Info info = infos.get(i);
-                System.out.printf("%-4d %-10s %-10s %-12s\n", (i + 1), info.name, info.pass, info.phone);
+                System.out.printf("|%-4d| %-30s| %-10s| %-12s|\n", (i + 1), info.name, info.pass, info.phone);
             }
-            System.out.println("----------------------------------------\n");
+            System.out.println("----------------------------------------------------------------\n");
             return true;
         }
-    }
-	
+    }	
 	public static void cls() {
 	    for (int i = 0; i < 20; i++) {
 	        System.out.println();
